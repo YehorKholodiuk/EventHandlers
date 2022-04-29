@@ -2,22 +2,23 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const helloClick = () =>{
+    console.log('Hello !!!')
+  };
+  const plusNumber = (n) => {
+    console.log('Number',n)
+  }
+  const onChangeName = (event) => {
+ console.log(event.target.value)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <button onClick ={helloClick}>Hello</button>
+      <button onClick={() => console.log('plus')}>Plus</button>
+      <button onClick={() => plusNumber(123)}>Plus number</button>
+        <hr/>
+
+        <input onChange={onChangeName}/>
     </div>
   );
 }
